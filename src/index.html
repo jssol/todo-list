@@ -8,7 +8,18 @@
 </head>
 <body>
   <main class="app-wrapper">
-    
+    <header class="app-header">
+      <h1 class="app-title">Today's To Do</h1>
+      <button type="button" class="button reset-list reset-icon">Clear</button>
+    </header>
+    <form action="#" id="add-book" class="add-book">
+      <label for="book-input" class="book-input">
+        <input type="text" id="book-input" name="book-input" placeholder="Add to your list...">
+      </label>
+      <button type="submit" class="button submit-book">Submit</button>
+    </form>
+    <ul class="tasks-list"></ul>
+    <button type="button" class="button reset-list reset-all">Clear all completed</button>
   </main>
 </body>
 </html>

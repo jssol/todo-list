@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/jssol/todo-list/issues"
   },
-  "homepage": "https://github.com/jssol/todo-list/dist/index.html",
+  "homepage": "https://jssol.github.io/todo-list/dist/",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.6.0",

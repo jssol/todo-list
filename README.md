@@ -1,6 +1,6 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Todo list
 
-# Project Name
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
 > Description the project.
 

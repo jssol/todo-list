@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://jssol.github.io/todo-list/)
+[Live Demo Link](https://jssol.github.io/todo-list/dist/)
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ For:
 
 👤 **Jonathan Sivahera**
 
-- GitHub: [@jsso](https://github.com/jssol)
+- GitHub: [@jssol](https://github.com/jssol)
 - Twitter: [@jsivahera](https://twitter.com/jsivahera)
 - LinkedIn: [Jonathan Sivahera](https://linkedin.com/in/jsivahera)
 

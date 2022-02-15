@@ -16,10 +16,10 @@ $fw-regular: 'Poppins', sans-serif;
 
 // Shadow color
 $shadow-color: #858585;
-$shadow: 0px 0.6px 0.8px $shadow-color,
--0.1px 2.7px 3.7px -0.2px $shadow-color,
--0.1px 5.7px 7.9px -0.5px $shadow-color,
--0.3px 12.3px 17.1px -0.7px $shadow-color;
+$shadow: 0 0.6px 0.8px $shadow-color,
+  -0.1px 2.7px 3.7px -0.2px $shadow-color,
+  -0.1px 5.7px 7.9px -0.5px $shadow-color,
+  -0.3px 12.3px 17.1px -0.7px $shadow-color;
 $line-height: 1.6;
 
 @mixin box-shadow {
@@ -64,7 +64,9 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: $main-bg;
+
   @include flex();
+
   color: $text-color;
   font-size: $fs-text;
   font-weight: $fw-regular;
@@ -82,6 +84,7 @@ h3 {
 .app-wrapper {
   @include flex(column, center, stretch);
   @include box-shadow();
+
   width: 90%;
   background-color: $white;
 
@@ -89,6 +92,7 @@ h3 {
     @include height();
     @include border();
     @include flex(row, stretch, center);
+
     padding: 1em;
 
     .app-title {
@@ -102,6 +106,7 @@ h3 {
   .add-book {
     @include height();
     @include border();
+
     position: relative;
 
     .book-input {
@@ -134,6 +139,7 @@ h3 {
     .task {
       width: 100%;
       padding: 1em;
+
       @include height();
       @include border();
       @include flex(row, flex-start, center);
@@ -143,6 +149,7 @@ h3 {
   .reset-all {
     @include height();
     @include flex();
+
     background-color: $main-bg;
   }
 }

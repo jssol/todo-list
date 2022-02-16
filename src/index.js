@@ -1,35 +1,20 @@
 import './style.scss';
+import { TaskList } from './taskManager';
 
 const tasksList = document.querySelector('.tasks-list');
-const tasks = [
-  {
-    description: 'wash the dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'complete the To Do project',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'eat, code, sleep',
-    completed: false,
-    index: 2,
-  },
-];
+const form = document.getElementById('add-book');
+const todo = new TaskList();
 
-const displayTasks = (tasks, tasksList) => {
-  tasks.forEach((task) => {
-    const li = document.createElement('li');
-    li.id = task.index;
-    li.className = 'task';
-    li.textContent = task.description;
-
-    tasksList.appendChild(li);
-  });
-};
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const input = document.getElementById('book-input');
+  todo.addTask(input.value);
+  todo.setStore();
+  todo.displayTasks(tasksList);
+  input.value = '';
+})
 
 document.addEventListener('DOMContentLoaded', () => {
-  displayTasks(tasks, tasksList);
+  todo.getStore();
+  todo.displayTasks(tasksList);
 });

@@ -38,6 +38,7 @@ $line-height: 1.6;
 }
 
 @mixin height {
+  min-height: 3em;
   height: 3em;
 }
 
@@ -93,6 +94,7 @@ h3 {
   @include box-shadow();
 
   width: 90%;
+  max-height: 80%;
   background-color: $white;
   border-radius: 0.25em;
   overflow: hidden;
@@ -144,6 +146,7 @@ h3 {
 
   .tasks-list {
     @include reset-list();
+    overflow-y: scroll;
 
     .task {
       width: 100%;

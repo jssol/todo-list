@@ -1,3 +1,5 @@
+import { tasksList } from './index.js'
+
 class Task {
   constructor(description, container) {
     this.description = description;
@@ -21,22 +23,32 @@ export class TaskList {
     }
   }
 
+  removeTask = (index) => {
+    this.tasks.splice(index, 1);
+  }
+
   displayTasks = (taskslist) => {
     taskslist.innerHTML = '';
-    this.tasks.forEach((task) => {
+    this.tasks.forEach((task, index) => {
       const li = document.createElement('li');
       const check = document.createElement('button');
       const dots = document.createElement('button');
+      const del = document.createElement('button');
       const field = document.createElement('p')
       li.id = task.index;
       li.className = 'task';
       field.textContent = task.description;
       field.className = 'task-description';
       dots.classList.add('button', 'dots');
+      del.classList.add('button', 'del');
       check.classList.add('button', 'check');
       dots.innerHTML = 
       `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+      </svg>`;
+      del.innerHTML = 
+      `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
       </svg>`;
       check.innerHTML = 
       `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,7 +71,21 @@ export class TaskList {
         }
       });
 
-      li.append(check, field, dots);
+      dots.addEventListener('click', () => {
+        li.classList.add('edit');
+      });
+
+      del.addEventListener('click', () => {
+        this.removeTask(index);
+        this.tasks.forEach((task, index) => {
+          task.index = index + 1;
+        })
+        this.setStore();
+        this.displayTasks(tasksList);
+        console.log(this.tasks);
+      });
+
+      li.append(check, field, del, dots);
       taskslist.appendChild(li);
     });
   }
@@ -69,17 +95,13 @@ export class TaskList {
     this.tasks.push(task);
   }
 
-  // removeTask = () => {
-
-  // }
-
   // updateTask = () => {
 
   // }
 
-  // clearAll = () => {
-
-  // }
+  clearAll = () => {
+    this.tasks = [];
+  }
 
   // clearComplete = () => {
 

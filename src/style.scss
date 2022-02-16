@@ -159,6 +159,22 @@ h3 {
         padding: 0.25em;
         @include flex(row, flex-start, center);
       }
+
+      .del {
+        display: none;
+      }
+    }
+
+    .edit {
+      background-color: hsl(60, 90%, 65%);
+
+      .del {
+        display: block;
+      }
+
+      .dots {
+        display: none;
+      }
     }
 
     .completed {

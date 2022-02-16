@@ -146,6 +146,7 @@ h3 {
 
   .tasks-list {
     @include reset-list();
+
     overflow-y: scroll;
 
     .task {
@@ -160,6 +161,7 @@ h3 {
         width: 100%;
         height: inherit;
         padding: 0.25em;
+
         @include flex(row, flex-start, center);
       }
 

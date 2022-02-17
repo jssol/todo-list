@@ -151,7 +151,7 @@ input:focus {
   .tasks-list {
     @include reset-list();
 
-    overflow-y: scroll;
+    overflow-y: auto;
 
     .task {
       width: 100%;

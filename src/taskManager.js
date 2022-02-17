@@ -75,10 +75,12 @@ export default class TaskList {
 
       dots.addEventListener('click', () => {
         li.classList.add('edit');
+        inputField.focus();
       });
 
       field.addEventListener('click', () => {
         li.classList.add('edit');
+        inputField.focus();
       });
 
       inputField.addEventListener('mouseout', () => {
@@ -97,6 +99,10 @@ export default class TaskList {
         });
         this.setStore();
         this.displayTasks(tasksList);
+      });
+
+      li.addEventListener('mouseout', () => {
+        li.classList.remove('edit');
       });
 
       li.append(check, field, inputField, del, dots);

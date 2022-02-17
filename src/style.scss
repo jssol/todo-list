@@ -210,10 +210,12 @@ input:focus {
     }
   }
 
-  .reset-all {
+  .reset-completed {
     @include height();
     @include flex();
 
+    color: $text-color;
+    cursor: pointer;
     width: 100%;
     background-color: $main-bg;
     text-decoration: underline;

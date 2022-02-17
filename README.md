@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://jssol.github.io/todo-list/dist/)
+[Live Demo Link](https://jssol.github.io/todo-list/)
 
 ## Getting Started
 

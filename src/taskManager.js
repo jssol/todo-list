@@ -49,7 +49,7 @@ export default class TaskList {
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
       </svg>`;
 
-      if(task.completed) {
+      if (task.completed) {
         li.classList.add('completed');
         check.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
@@ -78,9 +78,9 @@ export default class TaskList {
         li.classList.add('edit');
         inputField.focus();
 
-        if(li.classList.contains('edit')) {
+        if (li.classList.contains('edit')) {
           li.addEventListener('keydown', (e) => {
-            if(e.key === 'Enter' && inputField.value) {
+            if (e.key === 'Enter' && inputField.value) {
               task.description = inputField.value;
               this.setStore();
               this.displayTasks(tasksList);

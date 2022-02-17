@@ -1,14 +1,8 @@
-import { tasksList } from './index.js';
+import Task from './task.js';
 
-class Task {
-  constructor(description, container) {
-    this.description = description;
-    this.completed = false;
-    this.index = container.length + 1;
-  }
-}
+const tasksList = document.querySelector('.tasks-list');
 
-export class TaskList {
+export default class TaskList {
   constructor() {
     this.tasks = [];
   }
@@ -35,10 +29,13 @@ export class TaskList {
       const dots = document.createElement('button');
       const del = document.createElement('button');
       const field = document.createElement('p');
+      const inputField = document.createElement('input');
       li.id = task.index;
       li.className = 'task';
       field.textContent = task.description;
+      inputField.value = task.description;
       field.className = 'task-description';
+      inputField.className = 'task-mod';
       dots.classList.add('button', 'dots');
       del.classList.add('button', 'del');
       check.classList.add('button', 'check');
@@ -69,6 +66,19 @@ export class TaskList {
         li.classList.add('edit');
       });
 
+      field.addEventListener('click', () => {
+        li.classList.add('edit');
+      });
+
+      inputField.addEventListener('mouseout', () => {
+        if (inputField.value) {
+          task.description = inputField.value;
+          this.setStore();
+          this.displayTasks(tasksList);
+        }
+        li.classList.remove('edit');
+      });
+
       del.addEventListener('click', () => {
         this.removeTask(index);
         this.tasks.forEach((task, index) => {
@@ -76,10 +86,9 @@ export class TaskList {
         });
         this.setStore();
         this.displayTasks(tasksList);
-        console.log(this.tasks);
       });
 
-      li.append(check, field, del, dots);
+      li.append(check, field, inputField, del, dots);
       taskslist.appendChild(li);
     });
   }

@@ -124,4 +124,11 @@ export default class TaskList {
   clearAll = () => {
     this.tasks = [];
   }
+
+  clearCompleted = () => {
+    this.tasks = this.tasks.filter((task) => task.completed === false);
+    this.tasks.forEach((task, index) => {
+      task.index = index + 1;
+    });
+  }
 }

@@ -5,6 +5,7 @@ const tasksList = document.querySelector('.tasks-list');
 const form = document.getElementById('add-book');
 const todo = new TaskList();
 const clearAllButton = document.querySelector('.reset-icon');
+const clearCompletedButton = document.querySelector('.reset-completed');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -17,6 +18,12 @@ form.addEventListener('submit', (e) => {
 
 clearAllButton.addEventListener('click', () => {
   todo.clearAll();
+  todo.setStore();
+  todo.displayTasks(tasksList);
+});
+
+clearCompletedButton.addEventListener('click', () => {
+  todo.clearCompleted();
   todo.setStore();
   todo.displayTasks(tasksList);
 });

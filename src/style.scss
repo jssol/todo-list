@@ -82,6 +82,10 @@ h3 {
   color: $title-color;
 }
 
+input:focus {
+  outline: none;
+}
+
 .button {
   color: $text-color;
   width: 1.75em;
@@ -165,6 +169,10 @@ h3 {
         @include flex(row, flex-start, center);
       }
 
+      .task-mod {
+        display: none;
+      }
+
       .del {
         display: none;
       }
@@ -172,6 +180,19 @@ h3 {
 
     .edit {
       background-color: hsl(60, 90%, 65%);
+
+      .task-description {
+        display: none;
+      }
+
+      .task-mod {
+        width: 100%;
+        height: inherit;
+        padding: 0.25em;
+        font-family: $ff-text;
+
+        @include flex(row, flex-start, center);
+      }
 
       .del {
         display: block;

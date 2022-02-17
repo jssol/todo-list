@@ -73,17 +73,26 @@ export default class TaskList {
         }
       });
 
-      dots.addEventListener('click', () => {
+      dots.addEventListener('click', (e) => {
+        e.stopPropagation();
         li.classList.add('edit');
         inputField.focus();
+
+        if(li.classList.contains('edit')) {
+          li.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter' && inputField.value) {
+              task.description = inputField.value;
+              this.setStore();
+              this.displayTasks(tasksList);
+              inputField.blur();
+              li.classList.remove('edit');
+            }
+          });
+        }
       });
 
-      field.addEventListener('click', () => {
-        li.classList.add('edit');
-        inputField.focus();
-      });
-
-      inputField.addEventListener('mouseout', () => {
+      inputField.addEventListener('mouseout', (e) => {
+        e.stopPropagation();
         if (inputField.value) {
           task.description = inputField.value;
           this.setStore();
@@ -92,17 +101,14 @@ export default class TaskList {
         li.classList.remove('edit');
       });
 
-      del.addEventListener('click', () => {
+      del.addEventListener('click', (e) => {
+        e.stopPropagation();
         this.removeTask(index);
         this.tasks.forEach((task, index) => {
           task.index = index + 1;
         });
         this.setStore();
         this.displayTasks(tasksList);
-      });
-
-      li.addEventListener('mouseout', () => {
-        li.classList.remove('edit');
       });
 
       li.append(check, field, inputField, del, dots);

@@ -6,13 +6,13 @@ $main-bg: #f6f6f6;
 $white: #fff;
 
 $ff-text: 'Roboto Mono', monospace;
-$fs-text: 0.95em;
+$fs-text: 1em;
 
 $ff-title: 'Poppins', sans-serif;
 $fs-title: 1.125em;
 
-$fw-bold: 'Poppins', sans-serif;
-$fw-regular: 'Poppins', sans-serif;
+$fw-bold: 600;
+$fw-regular: 400;
 
 // Shadow color
 $shadow-color: #858585;
@@ -38,6 +38,7 @@ $line-height: 1.6;
 }
 
 @mixin height {
+  min-height: 3em;
   height: 3em;
 }
 
@@ -81,12 +82,26 @@ h3 {
   color: $title-color;
 }
 
+input:focus {
+  outline: none;
+}
+
+.button {
+  color: $text-color;
+  width: 1.75em;
+  height: auto;
+  cursor: pointer;
+}
+
 .app-wrapper {
   @include flex(column, center, stretch);
   @include box-shadow();
 
   width: 90%;
+  max-height: 80%;
   background-color: $white;
+  border-radius: 0.25em;
+  overflow: hidden;
 
   .app-header {
     @include height();
@@ -136,13 +151,62 @@ h3 {
   .tasks-list {
     @include reset-list();
 
+    overflow-y: auto;
+
     .task {
       width: 100%;
       padding: 1em;
 
       @include height();
       @include border();
-      @include flex(row, flex-start, center);
+      @include flex(row, space-between, center);
+
+      .task-description {
+        width: 100%;
+        height: inherit;
+        padding: 0.25em;
+
+        @include flex(row, flex-start, center);
+      }
+
+      .task-mod {
+        display: none;
+      }
+
+      .del {
+        display: none;
+      }
+    }
+
+    .edit {
+      background-color: hsl(60, 90%, 65%);
+
+      .task-description {
+        display: none;
+      }
+
+      .task-mod {
+        width: 100%;
+        height: inherit;
+        padding: 0.25em;
+        font-family: $ff-text;
+
+        @include flex(row, flex-start, center);
+      }
+
+      .del {
+        display: block;
+      }
+
+      .dots {
+        display: none;
+      }
+    }
+
+    .completed {
+      .task-description {
+        text-decoration: line-through;
+      }
     }
   }
 
@@ -150,7 +214,14 @@ h3 {
     @include height();
     @include flex();
 
+    width: 100%;
     background-color: $main-bg;
+    text-decoration: underline;
+    transition: all 350ms ease-out;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 

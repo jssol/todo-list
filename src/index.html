@@ -10,13 +10,21 @@
   <main class="app-wrapper">
     <header class="app-header">
       <h1 class="app-title">Today's To Do</h1>
-      <button type="button" class="button reset-list reset-icon">Clear</button>
+      <button type="button" class="button reset-list reset-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      </button>
     </header>
     <form action="#" id="add-book" class="add-book">
       <label for="book-input" class="book-input">
-        <input type="text" id="book-input" name="book-input" placeholder="Add to your list...">
+        <input type="text" id="book-input" name="book-input" placeholder="Add to your list..." required>
       </label>
-      <button type="submit" class="button submit-book">Submit</button>
+      <button type="submit" class="button submit-book">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+        </svg>
+      </button>
     </form>
     <ul class="tasks-list"></ul>
     <button type="button" class="button reset-list reset-all">Clear all completed</button>

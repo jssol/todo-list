@@ -1,5 +1,5 @@
 import './style.scss';
-import { TaskList } from './taskManager';
+import TaskList from './taskManager.js';
 
 const tasksList = document.querySelector('.tasks-list');
 const form = document.getElementById('add-book');
@@ -25,5 +25,3 @@ document.addEventListener('DOMContentLoaded', () => {
   todo.getStore();
   todo.displayTasks(tasksList);
 });
-
-export { tasksList };

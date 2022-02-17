@@ -1,4 +1,4 @@
-import TaskStatus from "./taskStatus.js";
+import TaskStatus from './taskStatus.js';
 
 export const taskStatus = new TaskStatus();
 

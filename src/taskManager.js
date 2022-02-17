@@ -1,5 +1,4 @@
-import Task from './task.js';
-import { taskStatus } from './task.js';
+import Task, { taskStatus } from './task.js';
 
 const tasksList = document.querySelector('.tasks-list');
 

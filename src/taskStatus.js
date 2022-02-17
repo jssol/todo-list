@@ -5,9 +5,11 @@ export default class TaskStatus {
 
   updateStatus = (li) => {
     if (li.classList.contains('completed')) {
-      return this.completed = true;
+      this.completed = true;
+      return this.completed;
     } else {
-      return this.completed = false;
+      this.completed = false;
+      return this.completed;
     }
   }
 }

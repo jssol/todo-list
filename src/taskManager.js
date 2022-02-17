@@ -98,15 +98,7 @@ export default class TaskList {
     this.tasks.push(task);
   }
 
-  // updateTask = () => {
-
-  // }
-
   clearAll = () => {
     this.tasks = [];
   }
-
-  // clearComplete = () => {
-
-  // }
 }

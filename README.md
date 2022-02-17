@@ -32,7 +32,11 @@ To get the project locally, run `git clone git@github.com:jssol/todo-list.git`
 
 ### Usage
 
-This project helps you keep track of your tasks right in your navigator.
+To get the configuration of the app:
+Run `npm install`
+
+To launch the app locally in dev mode:
+Run `npm start`
 
 ### Run tests
 

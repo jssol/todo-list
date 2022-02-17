@@ -22,5 +22,6 @@ clearAllButton.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  displayTasks(tasks, tasksList);
+  todo.getStore();
+  todo.displayTasks(tasksList);
 });

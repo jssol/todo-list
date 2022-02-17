@@ -1,6 +1,8 @@
-import Task, { taskStatus } from './task.js';
+import Task from './task.js';
+import TaskStatus from './taskStatus.js';
 
 const tasksList = document.querySelector('.tasks-list');
+const taskStatus = new TaskStatus();
 
 export default class TaskList {
   constructor() {

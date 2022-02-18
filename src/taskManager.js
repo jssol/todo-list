@@ -82,8 +82,8 @@ export default class TaskList {
 
         if (li.classList.contains('edit')) {
           li.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && inputField.value) {
-              task.description = inputField.value;
+            if (e.key === 'Enter' && inputField.value.trim()) {
+              task.description = inputField.value.trim();
               this.setStore();
               this.displayTasks(tasksList);
               inputField.blur();
@@ -95,8 +95,8 @@ export default class TaskList {
 
       inputField.addEventListener('mouseout', (e) => {
         e.stopPropagation();
-        if (inputField.value) {
-          task.description = inputField.value;
+        if (inputField.value.trim()) {
+          task.description = inputField.value.trim();
           this.setStore();
           this.displayTasks(tasksList);
         }
@@ -119,8 +119,10 @@ export default class TaskList {
   }
 
   addTask = (description) => {
-    const task = new Task(description, this.tasks);
-    this.tasks.push(task);
+    if(description.trim()) {
+      const task = new Task(description.trim(), this.tasks);
+      this.tasks.push(task);
+    }
   }
 
   clearAll = () => {

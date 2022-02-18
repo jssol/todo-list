@@ -1,11 +1,17 @@
 import './style.scss';
 import TaskList from './taskManager.js';
+import { updateAppState, getAppState } from './toggleDark.js';
 
 const tasksList = document.querySelector('.tasks-list');
 const form = document.getElementById('add-book');
 const todo = new TaskList();
 const clearAllButton = document.querySelector('.reset-icon');
 const clearCompletedButton = document.querySelector('.reset-completed');
+const themeToggle = document.querySelector('.dark-mode-toggle');
+
+themeToggle.addEventListener('click', (e) => {
+  updateAppState(document.documentElement, themeToggle);
+});
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -29,6 +35,7 @@ clearCompletedButton.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  getAppState(document.documentElement, themeToggle);
   todo.getStore();
   todo.displayTasks(tasksList);
 });

@@ -42,131 +42,7 @@ $time: 50ms;
   }
 }
 
-@mixin box-shadow($shadow-color) {
-  box-shadow:
-    0 0.6px 0.8px $shadow-color,
-    -0.1px 2.7px 3.7px -0.2px $shadow-color,
-    -0.1px 5.7px 7.9px -0.5px $shadow-color,
-    -0.3px 12.3px 17.1px -0.7px $shadow-color;
-}
-
-@mixin reset-list {
-  list-style: none;
-}
-
-@mixin flex($direction: row, $justify: center, $align: center) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
-
-@mixin height {
-  min-height: 3em;
-  height: 3em;
-}
-
-@mixin border {
-  border-bottom: 1px solid #999;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-}
-
-html {
-  scroll-behavior: smooth;
-  $title-color: #333;
-  $text-color: #555;
-  $main-bg: #f6f6f6;
-  $white: #fff;
-
-  @include theme($title-color, $text-color, $main-bg, $white);
-
-  // Shadow color
-  $shadow-color: #858585;
-
-  .app-wrapper {
-    @include box-shadow($shadow-color);
-  }
-
-  &.dark {
-    $title-color: hsl(0, 50%, 90%);
-    $text-color: hsl(0, 50%, 80%);
-    $main-bg: #1d1d1d;
-    $white: #333;
-
-    @include theme($title-color, $text-color, $main-bg, $white);
-
-    #book-input {
-      color: $text-color;
-
-      &::placeholder {
-        color: inherit;
-      }
-    }
-
-    .edit {
-      background-color: #472d4f !important;
-      color: $text-color;
-
-      .task-mod {
-        color: $text-color;
-      }
-    }
-
-    // Shadow color
-    $shadow-color: #000;
-
-    .app-wrapper {
-      @include box-shadow($shadow-color);
-    }
-  }
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  transition: all $time ease-in-out;
-
-  @include flex();
-
-  font-size: $fs-text;
-  font-weight: $fw-regular;
-  font-family: $ff-text;
-}
-
-.dark-mode-toggle {
-  position: fixed;
-  top: 2em;
-  right: 2em;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: $fw-bold;
-  font-family: $ff-title;
-}
-
-input:focus {
-  outline: none;
-}
-
-.button {
-  width: 1.75em;
-  height: auto;
-  cursor: pointer;
-}
-
-.app-wrapper {
+@mixin app-wrapper {
   @include flex(column, center, stretch);
 
   width: 90%;
@@ -296,6 +172,132 @@ input:focus {
       text-decoration: none;
     }
   }
+}
+
+@mixin box-shadow($shadow-color) {
+  box-shadow:
+    0 0.6px 0.8px $shadow-color,
+    -0.1px 2.7px 3.7px -0.2px $shadow-color,
+    -0.1px 5.7px 7.9px -0.5px $shadow-color,
+    -0.3px 12.3px 17.1px -0.7px $shadow-color;
+}
+
+@mixin reset-list {
+  list-style: none;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin height {
+  min-height: 3em;
+  height: 3em;
+}
+
+@mixin border {
+  border-bottom: 1px solid #999;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  $title-color: #333;
+  $text-color: #555;
+  $main-bg: #f6f6f6;
+  $white: #fff;
+
+  @include theme($title-color, $text-color, $main-bg, $white);
+
+  // Shadow color
+  $shadow-color: #858585;
+
+  .app-wrapper {
+    @include box-shadow($shadow-color);
+    @include app-wrapper();
+  }
+
+  &.dark {
+    $title-color: hsl(0, 50%, 90%);
+    $text-color: hsl(0, 50%, 80%);
+    $main-bg: #1d1d1d;
+    $white: #333;
+
+    @include theme($title-color, $text-color, $main-bg, $white);
+
+    #book-input {
+      color: $text-color;
+
+      &::placeholder {
+        color: inherit;
+      }
+    }
+
+    .edit {
+      background-color: #472d4f !important;
+      color: $text-color;
+
+      .task-mod {
+        color: $text-color;
+      }
+    }
+
+    // Shadow color
+    $shadow-color: #000;
+
+    .app-wrapper {
+      @include box-shadow($shadow-color);
+      @include app-wrapper();
+    }
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: all $time ease-in-out;
+
+  @include flex();
+
+  font-size: $fs-text;
+  font-weight: $fw-regular;
+  font-family: $ff-text;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $fw-bold;
+  font-family: $ff-title;
+}
+
+input:focus {
+  outline: none;
+}
+
+.button {
+  width: 1.75em;
+  height: auto;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 600px) {

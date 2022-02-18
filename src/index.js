@@ -9,7 +9,7 @@ const clearAllButton = document.querySelector('.reset-icon');
 const clearCompletedButton = document.querySelector('.reset-completed');
 const themeToggle = document.querySelector('.dark-mode-toggle');
 
-themeToggle.addEventListener('click', (e) => {
+themeToggle.addEventListener('click', () => {
   updateAppState(document.documentElement, themeToggle);
 });
 

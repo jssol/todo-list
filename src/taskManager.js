@@ -119,7 +119,7 @@ export default class TaskList {
   }
 
   addTask = (description) => {
-    if(description.trim()) {
+    if (description.trim()) {
       const task = new Task(description.trim(), this.tasks);
       this.tasks.push(task);
     }

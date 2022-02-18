@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono:wght@400;600&display=swap');
 
-
 $ff-text: 'Roboto Mono', monospace;
 $fs-text: 1em;
 
@@ -44,10 +43,11 @@ $time: 50ms;
 }
 
 @mixin box-shadow($shadow-color) {
-  box-shadow: 0 0.6px 0.8px $shadow-color,
-  -0.1px 2.7px 3.7px -0.2px $shadow-color,
-  -0.1px 5.7px 7.9px -0.5px $shadow-color,
-  -0.3px 12.3px 17.1px -0.7px $shadow-color;
+  box-shadow:
+    0 0.6px 0.8px $shadow-color,
+    -0.1px 2.7px 3.7px -0.2px $shadow-color,
+    -0.1px 5.7px 7.9px -0.5px $shadow-color,
+    -0.3px 12.3px 17.1px -0.7px $shadow-color;
 }
 
 @mixin reset-list {
@@ -91,6 +91,7 @@ html {
 
   // Shadow color
   $shadow-color: #858585;
+
   .app-wrapper {
     @include box-shadow($shadow-color);
   }
@@ -98,7 +99,7 @@ html {
   &.dark {
     $title-color: hsl(0, 50%, 90%);
     $text-color: hsl(0, 50%, 80%);
-    $main-bg: #1D1D1D;
+    $main-bg: #1d1d1d;
     $white: #333;
 
     @include theme($title-color, $text-color, $main-bg, $white);
@@ -112,7 +113,7 @@ html {
     }
 
     .edit {
-      background-color: #472D4F !important;
+      background-color: #472d4f !important;
       color: $text-color;
 
       .task-mod {
@@ -122,6 +123,7 @@ html {
 
     // Shadow color
     $shadow-color: #000;
+
     .app-wrapper {
       @include box-shadow($shadow-color);
     }

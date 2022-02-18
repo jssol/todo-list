@@ -1,16 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono:wght@400;600&display=swap');
 
-$title-color: #333;
-$text-color: #555;
-$main-bg: #f6f6f6;
-$white: #fff;
-
-.dark {
-  $title-color: #333;
-  $text-color: #555;
-  $main-bg: #f6f6f6;
-  $white: #fff;
-}
 
 $ff-text: 'Roboto Mono', monospace;
 $fs-text: 1em;
@@ -21,16 +10,43 @@ $fs-title: 1.5em;
 $fw-bold: 600;
 $fw-regular: 400;
 
-// Shadow color
-$shadow-color: #858585;
-$shadow: 0 0.6px 0.8px $shadow-color,
+$line-height: 1.6;
+
+@mixin theme($title-color, $text-color, $main-bg, $white) {
+  body {
+    color: $text-color;
+    background-color: $main-bg;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: $title-color;
+  }
+
+  .button {
+    color: $text-color;
+  }
+
+  .app-wrapper {
+    background-color: $white;
+  }
+
+  .app-title {
+    color: $title-color;
+  }
+
+  .reset-completed {
+    color: $text-color;
+    background-color: $main-bg;
+  }
+}
+
+@mixin box-shadow($shadow-color) {
+  box-shadow: 0 0.6px 0.8px $shadow-color,
   -0.1px 2.7px 3.7px -0.2px $shadow-color,
   -0.1px 5.7px 7.9px -0.5px $shadow-color,
   -0.3px 12.3px 17.1px -0.7px $shadow-color;
-$line-height: 1.6;
-
-@mixin box-shadow {
-  box-shadow: $shadow;
 }
 
 @mixin reset-list {
@@ -65,17 +81,59 @@ $line-height: 1.6;
 
 html {
   scroll-behavior: smooth;
+  $title-color: #333;
+  $text-color: #555;
+  $main-bg: #f6f6f6;
+  $white: #fff;
+
+  @include theme($title-color, $text-color, $main-bg, $white);
+
+  // Shadow color
+  $shadow-color: #858585;
+  .app-wrapper {
+    @include box-shadow($shadow-color);
+  }
+
+  &.dark {
+    $title-color: hsl(0, 50%, 90%);
+    $text-color: hsl(0, 50%, 80%);
+    $main-bg: #1D1D1D;
+    $white: #333;
+
+    @include theme($title-color, $text-color, $main-bg, $white);
+
+    #book-input {
+      color: $text-color;
+
+      &::placeholder {
+        color: inherit;
+      }
+    }
+
+    .edit {
+      background-color: #472D4F !important;
+      color: $text-color;
+
+      .task-mod {
+        color: $text-color;
+      }
+    }
+
+    // Shadow color
+    $shadow-color: #000;
+    .app-wrapper {
+      @include box-shadow($shadow-color);
+    }
+  }
 }
 
 body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: $main-bg;
 
   @include flex();
 
-  color: $text-color;
   font-size: $fs-text;
   font-weight: $fw-regular;
   font-family: $ff-text;
@@ -86,7 +144,6 @@ h2,
 h3 {
   font-weight: $fw-bold;
   font-family: $ff-title;
-  color: $title-color;
 }
 
 input:focus {
@@ -94,7 +151,6 @@ input:focus {
 }
 
 .button {
-  color: $text-color;
   width: 1.75em;
   height: auto;
   cursor: pointer;
@@ -102,11 +158,9 @@ input:focus {
 
 .app-wrapper {
   @include flex(column, center, stretch);
-  @include box-shadow();
 
   width: 90%;
   max-height: 80%;
-  background-color: $white;
   border-radius: 0.25em;
   overflow: hidden;
 
@@ -222,10 +276,8 @@ input:focus {
     @include height();
     @include flex();
 
-    color: $text-color;
     cursor: pointer;
     width: 100%;
-    background-color: $main-bg;
     text-decoration: underline;
     transition: all 350ms ease-out;
 
@@ -234,12 +286,6 @@ input:focus {
     }
   }
 }
-
-// @media only screen and (max-width: 320px) {
-//   .app-title {
-//     font-size: $fs-title;
-//   }
-// }
 
 @media only screen and (min-width: 600px) {
   .app-wrapper {

@@ -229,9 +229,21 @@ html {
     @include app-wrapper();
   }
 
+  @media only screen and (min-width: 600px) {
+    .app-wrapper {
+      width: 65%;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    .app-wrapper {
+      width: 45%;
+    }
+  }
+
   &.dark {
-    $title-color: hsl(0, 50%, 90%);
-    $text-color: hsl(0, 50%, 80%);
+    $title-color: hsl(0, 50%, 95%);
+    $text-color: hsl(0, 50%, 85%);
     $main-bg: #1d1d1d;
     $white: #333;
 
@@ -261,17 +273,17 @@ html {
       @include box-shadow($shadow-color);
       @include app-wrapper();
     }
-  }
 
-  @media only screen and (min-width: 600px) {
-    .app-wrapper {
-      width: 65%;
+    @media only screen and (min-width: 600px) {
+      .app-wrapper {
+        width: 65%;
+      }
     }
-  }
 
-  @media only screen and (min-width: 992px) {
-    .app-wrapper {
-      width: 45%;
+    @media only screen and (min-width: 992px) {
+      .app-wrapper {
+        width: 45%;
+      }
     }
   }
 }

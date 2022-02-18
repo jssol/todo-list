@@ -5,11 +5,18 @@ $text-color: #555;
 $main-bg: #f6f6f6;
 $white: #fff;
 
+.dark {
+  $title-color: #333;
+  $text-color: #555;
+  $main-bg: #f6f6f6;
+  $white: #fff;
+}
+
 $ff-text: 'Roboto Mono', monospace;
 $fs-text: 1em;
 
 $ff-title: 'Poppins', sans-serif;
-$fs-title: 1.125em;
+$fs-title: 1.5em;
 
 $fw-bold: 600;
 $fw-regular: 400;
@@ -115,6 +122,7 @@ input:focus {
       height: 100%;
       display: flex;
       align-items: center;
+      font-size: $fs-title;
     }
   }
 
@@ -226,6 +234,12 @@ input:focus {
     }
   }
 }
+
+// @media only screen and (max-width: 320px) {
+//   .app-title {
+//     font-size: $fs-title;
+//   }
+// }
 
 @media only screen and (min-width: 600px) {
   .app-wrapper {

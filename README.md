@@ -6,7 +6,11 @@
 
 ## Screenshot
 
-![app-screenshot](./app_screenshot.png)
+- Light Mode:
+![app-light-screenshot](./app-light.png)
+
+- Dark Mode:
+![app-dark-screenshot](./app-dark.png)
 
 ## Built With
 

@@ -4,10 +4,9 @@
 
 import TaskList from './taskManager.js';
 
-document.body.innerHTML =
-      '<div>' +
-      '  <ul id="list"></li>' +
-      '</div>';
+document.body.innerHTML = '<div>'
+      + '  <ul id="list"></li>'
+      + '</div>';
 const itemsList = document.querySelector('#list');
 
 const taskClass = new TaskList();

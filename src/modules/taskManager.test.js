@@ -4,6 +4,12 @@
 
 import TaskList from './taskManager.js';
 
+document.body.innerHTML =
+      '<div>' +
+      '  <ul id="list"></li>' +
+      '</div>';
+const itemsList = document.querySelector('#list');
+
 const taskClass = new TaskList();
 
 describe('testing adding ', () => {
@@ -20,6 +26,7 @@ describe('testing adding ', () => {
     expect(taskClass.tasks[2].description).toEqual('Microverse');
   });
 });
+
 describe('testing deleting ', () => {
   test('deleting the task', () => {
     taskClass.removeTask(0);
@@ -32,5 +39,37 @@ describe('testing deleting ', () => {
   test('deleting the task', () => {
     taskClass.removeTask(0);
     expect(taskClass.tasks.length).toBe(0);
+  });
+});
+
+describe('adding or deleting li items to the ul in the DOM', () => {
+  describe('adding items to the list', () => {
+    test('Add Hello to the list', () => {
+      taskClass.addTask('Hello');
+      taskClass.displayTasks(itemsList);
+      const list = document.querySelectorAll('#list li');
+      expect(list).toHaveLength(1);
+    });
+    test('Add World to the list', () => {
+      taskClass.addTask('World');
+      taskClass.displayTasks(itemsList);
+      const list = document.querySelectorAll('#list li');
+      expect(list).toHaveLength(2);
+    });
+  });
+
+  describe('deleting items from the list', () => {
+    test('Remove Hello from the list', () => {
+      taskClass.removeTask(0);
+      taskClass.displayTasks(itemsList);
+      const list = document.querySelectorAll('#list li');
+      expect(list).toHaveLength(1);
+    });
+    test('Remove World from the list', () => {
+      taskClass.removeTask(0);
+      taskClass.displayTasks(itemsList);
+      const list = document.querySelectorAll('#list li');
+      expect(list).toHaveLength(0);
+    });
   });
 });

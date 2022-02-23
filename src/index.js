@@ -1,6 +1,6 @@
 import './style.scss';
-import TaskList from './taskManager.js';
-import { updateAppState, getAppState } from './toggleDark.js';
+import TaskList from './modules/taskManager.js';
+import { updateAppState, getAppState } from './modules/toggleDark.js';
 
 const tasksList = document.querySelector('.tasks-list');
 const form = document.getElementById('add-book');

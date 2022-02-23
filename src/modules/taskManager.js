@@ -11,17 +11,17 @@ export default class TaskList {
 
   setStore = () => {
     localStorage.setItem('todo-list', JSON.stringify(this.tasks));
-  }
+  };
 
   getStore = () => {
     if (localStorage.getItem('todo-list')) {
       this.tasks = JSON.parse(localStorage.getItem('todo-list'));
     }
-  }
+  };
 
   removeTask = (index) => {
     this.tasks.splice(index, 1);
-  }
+  };
 
   displayTasks = (taskslist) => {
     taskslist.innerHTML = '';
@@ -116,23 +116,23 @@ export default class TaskList {
       li.append(check, field, inputField, del, dots);
       taskslist.appendChild(li);
     });
-  }
+  };
 
   addTask = (description) => {
     if (description.trim()) {
       const task = new Task(description.trim(), this.tasks);
       this.tasks.push(task);
     }
-  }
+  };
 
   clearAll = () => {
     this.tasks = [];
-  }
+  };
 
   clearCompleted = () => {
     this.tasks = this.tasks.filter((task) => task.completed === false);
     this.tasks.forEach((task, index) => {
       task.index = index + 1;
     });
-  }
+  };
 }

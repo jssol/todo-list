@@ -5,7 +5,7 @@
 import TaskList from './taskManager.js';
 
 document.body.innerHTML = '<div>'
-      + '  <ul id="list"></li>'
+      + '  <ul id="list"></ul>'
       + '</div>';
 const itemsList = document.querySelector('#list');
 

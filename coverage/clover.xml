@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1645697438332" clover="3.2.0">
-  <project timestamp="1645697438332" name="All files">
+<coverage generated="1645698296194" clover="3.2.0">
+  <project timestamp="1645698296195" name="All files">
     <metrics statements="90" coveredstatements="46" conditionals="18" coveredconditionals="2" methods="20" coveredmethods="7" elements="128" coveredelements="55" complexity="0" loc="90" ncloc="90" packages="1" files="3" classes="3"/>
-    <file name="task.js" path="/home/solotov/Documents/todo-list/src/modules/task.js">
+    <file name="task.js" path="C:\Users\bhttm\Desktop\ToDo-test\src\modules\task.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="3" count="7" type="stmt"/>
       <line num="4" count="7" type="stmt"/>
       <line num="5" count="7" type="stmt"/>
     </file>
-    <file name="taskManager.js" path="/home/solotov/Documents/todo-list/src/modules/taskManager.js">
+    <file name="taskManager.js" path="C:\Users\bhttm\Desktop\ToDo-test\src\modules\taskManager.js">
       <metrics statements="81" coveredstatements="41" conditionals="16" coveredconditionals="2" methods="17" coveredmethods="5"/>
       <line num="4" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
@@ -92,7 +92,7 @@
       <line num="134" count="0" type="stmt"/>
       <line num="135" count="0" type="stmt"/>
     </file>
-    <file name="taskStatus.js" path="/home/solotov/Documents/todo-list/src/modules/taskStatus.js">
+    <file name="taskStatus.js" path="C:\Users\bhttm\Desktop\ToDo-test\src\modules\taskStatus.js">
       <metrics statements="6" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <line num="3" count="1" type="stmt"/>
       <line num="6" count="1" type="stmt"/>

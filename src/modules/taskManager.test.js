@@ -98,7 +98,6 @@ describe('Testing completed tasks', () => {
 		taskClass.tasks[0].completed = true;
 		expect(taskClass.tasks[0].completed).toBeTruthy();
 	});
-	console.log();
 	test('Checking for completed tasks', () => {
 		taskClass.tasks[1].completed = true;
 		expect(taskClass.tasks[1].completed).toBeTruthy();
@@ -125,5 +124,22 @@ describe('Testing for clearing only completed', () => {
 		taskClass.tasks[1].completed = true;
 		taskClass.clearCompleted();
 		expect(taskClass.tasks.length).toBe(0);
+	});
+});
+
+describe('Testing for local storage', () => {
+	test('Testing for local storage ', () => { 
+		taskClass.addTask('Hello World');
+		taskClass.addTask('Hello Microverse');
+		taskClass.setStore();
+		expect(localStorage.getItem('todo-list')).not.toBeNull();
+	});
+});
+
+describe('Testing for removing local storage', () => {
+	test('Testing empty local storage', () => { 
+		taskClass.clearAll();
+		taskClass.setStore();		
+		expect(localStorage.getItem({})).toBeNull();
 	});
 });

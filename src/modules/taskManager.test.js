@@ -109,3 +109,21 @@ describe('Testing completed tasks', () => {
 		expect(taskClass.tasks[2].completed).toBeTruthy();
 	});
 });
+
+describe('Testing for clear All', () => {
+	test('Clear all tasks', () => {
+		taskClass.clearAll();
+		expect(taskClass.tasks.length).toBe(0);
+	});
+});
+
+describe('Testing for clearing only completed', () => {
+	test('Clear all completed tasks', () => { 
+		taskClass.addTask('Hello World');
+		taskClass.addTask('Hello Microverse');
+		taskClass.tasks[0].completed = true;
+		taskClass.tasks[1].completed = true;
+		taskClass.clearCompleted();
+		expect(taskClass.tasks.length).toBe(0);
+	});
+});

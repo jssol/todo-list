@@ -94,19 +94,19 @@ describe('adding, deleting or editing li items to the ul in the DOM', () => {
 });
 
 describe('Testing completed tasks', () => {
-	test('Checking for completed tasks', () => {
-		taskClass.tasks[0].completed = true;
-		expect(taskClass.tasks[0].completed).toBeTruthy();
-	});
-	test('Checking for completed tasks', () => {
-		taskClass.tasks[1].completed = true;
-		expect(taskClass.tasks[1].completed).toBeTruthy();
-	});
-	test('Checking for completed tasks', () => {
-		taskClass.addTask('New task')
-		taskClass.tasks[2].completed = true;
-		expect(taskClass.tasks[2].completed).toBeTruthy();
-	});
+  test('Checking for completed tasks', () => {
+    taskClass.tasks[0].completed = true;
+    expect(taskClass.tasks[0].completed).toBeTruthy();
+  });
+  test('Checking for completed tasks', () => {
+    taskClass.tasks[1].completed = true;
+    expect(taskClass.tasks[1].completed).toBeTruthy();
+  });
+  test('Checking for completed tasks', () => {
+    taskClass.addTask('New task');
+    taskClass.tasks[2].completed = true;
+    expect(taskClass.tasks[2].completed).toBeTruthy();
+  });
 });
 
 describe('Testing for clear All', () => {
@@ -117,29 +117,29 @@ describe('Testing for clear All', () => {
 });
 
 describe('Testing for clearing only completed', () => {
-	test('Clear all completed tasks', () => { 
-		taskClass.addTask('Hello World');
-		taskClass.addTask('Hello Microverse');
-		taskClass.tasks[0].completed = true;
-		taskClass.tasks[1].completed = true;
-		taskClass.clearCompleted();
-		expect(taskClass.tasks.length).toBe(0);
-	});
+  test('Clear all completed tasks', () => {
+    taskClass.addTask('Hello World');
+    taskClass.addTask('Hello Microverse');
+    taskClass.tasks[0].completed = true;
+    taskClass.tasks[1].completed = true;
+    taskClass.clearCompleted();
+    expect(taskClass.tasks.length).toBe(0);
+  });
 });
 
 describe('Testing for local storage', () => {
-	test('Testing for local storage ', () => { 
-		taskClass.addTask('Hello World');
-		taskClass.addTask('Hello Microverse');
-		taskClass.setStore();
-		expect(localStorage.getItem('todo-list')).not.toBeNull();
-	});
+  test('Testing for local storage ', () => {
+    taskClass.addTask('Hello World');
+    taskClass.addTask('Hello Microverse');
+    taskClass.setStore();
+    expect(localStorage.getItem('todo-list')).not.toBeNull();
+  });
 });
 
 describe('Testing for removing local storage', () => {
-	test('Testing empty local storage', () => { 
-		taskClass.clearAll();
-		taskClass.setStore();		
-		expect(localStorage.getItem({})).toBeNull();
-	});
+  test('Testing empty local storage', () => {
+    taskClass.clearAll();
+    taskClass.setStore();
+    expect(localStorage.getItem({})).toBeNull();
+  });
 });

@@ -92,3 +92,20 @@ describe('adding, deleting or editing li items to the ul in the DOM', () => {
 		});
 	});
 });
+
+describe('Testing completed tasks', () => {
+	test('Checking for completed tasks', () => {
+		taskClass.tasks[0].completed = true;
+		expect(taskClass.tasks[0].completed).toBeTruthy();
+	});
+	console.log();
+	test('Checking for completed tasks', () => {
+		taskClass.tasks[1].completed = true;
+		expect(taskClass.tasks[1].completed).toBeTruthy();
+	});
+	test('Checking for completed tasks', () => {
+		taskClass.addTask('New task')
+		taskClass.tasks[2].completed = true;
+		expect(taskClass.tasks[2].completed).toBeTruthy();
+	});
+});

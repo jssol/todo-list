@@ -6,7 +6,8 @@
 
 ## Screenshot
 
-- Light Mode
+- **Light Mode**
+
 ![app-light-screenshot](./app-light.png)
 
 - Dark Mode

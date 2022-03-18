@@ -10,7 +10,8 @@
 
 ![app-light-screenshot](./app-light.png)
 
-- Dark Mode
+- **Dark Mode**
+
 ![app-dark-screenshot](./app-dark.png)
 
 ## Built With

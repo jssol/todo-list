@@ -2,7 +2,7 @@
 
 ![microverse-badge](https://img.shields.io/badge/Microverse-blueviolet)
 
-> A simple todo list app that helps you keep track of the most important tasks of your busy day.
+> A simple todo list app that helps you keep track of the most important tasks of your busy day
 
 ## Screenshot
 

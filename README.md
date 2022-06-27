@@ -16,8 +16,8 @@
 
 ## Built With
 
-- HTML, Sass, Javascript(ES6)
-- Git/Github, CLI, Webpack, GH-Pages
+- HTML, Sass, Javascript(ES6).
+- Git/Github, CLI, Webpack, GH-Pages.
 
 ## Live Demo
 
